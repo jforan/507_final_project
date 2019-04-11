@@ -1,0 +1,72 @@
+SI507 - Final Project by Jen Foran
+
+----------
+Overall
+My project will scrap data from Wikipedia's 'List of metro systems' page (https://en.wikipedia.org/wiki/List_of_metro_systems) to aggregate data regarding worldwide metro systems. This data will include: city, country, system name, number of stations, annual ridership.
+
+The various routes will display different information regarding the average number of stations per country and overall, provide information for the country of the users' choice, pin all the cities with metro systems on a map, and display a scatterplot that shows ridership vs. stations.
+
+I want to focus on creating visuals that beautifully display the data in an understandable way.
+
+
+Interface description
+- Route 1: /station/countryaverage
+  This page will show the average number of stations for all stations, then the average number of stations per country. This will be a table.
+
+- Route 2: /station/<country>
+  A user will input the country of interest and the app will output the names of the stations in this country, along with their respective annual ridership.
+
+- Route 3: /station/map
+  This page will display a map in which with bubbles to indicate a city with a metro system.
+
+- Route 4: /station/ridership
+  This page will show a plot indicating the relationship between ridership and stations via a scatterplot.
+
+- Route 5: /new/<country>/<city>/<station_name>/<number_of_stations/<annual_ridership>
+  This page will allow users to add a new station with the appropriate other info: country, city, station name, number of stations, and annual ridership.
+
+Specifics
+I will be relying on data from scraping [https://en.wikipedia.org/wiki/List_of_metro_systems]. More specifically, I will scrape the chart under 'List' and 'Under construction.' The former data includes the following information: City, Country, Name, Year opened, Year of last expansion, Stations, System length, Annual ridership (millions). The latter includes: Location, Country, Name, Start of construction, Planned opening.
+
+I expect my database schema to include 2 tables - Countries and Station Names. There will be a one to many relationship. I will be populating the database by saving data to a database when it’s accessed via scraping or an API.
+
+I am planning to use the following modules in writing my code, aside from Flask and SQLAlchemy or some equivalent: plotly and Seaborn.
+
+
+I will be defining the following functions outside of Flask routes:
+* country_station_average - will take the average number of stations/system per country.
+* average_station - take the average number of stations/system.
+
+
+I will be defining the following classes outside of Flask routes/models:
+* Stations -- which will unpack the scraped data, locating the stations (and associated data) ready for entry into the tables
+
+
+
+Of the 6 requirements I plan on including the following:
+* scraping
+* user interaction
+* caching
+* templating
+* new module (plotly - https://plot.ly/python/)
+* another new module (Seaborn)
+
+The assignment(s) in 507 we’ve done that are most like what I want to do are:  Labs 2 - 6 (inheritances, database creation/manipulation, scraping/cleaning data), Project 2-4 (inheritances, database creation/manipulation, scraping/cleaning data, importing files, caching)
+
+Other useful resources for this project for me will be: stackoverflow.com, https://plot.ly/python/, https://plot.ly/python/scattermapbox/
+
+
+Milestones
+* Scrape data and Cache it. Clean and organize data
+* Place data into database tables
+* Define classes & build functions
+* Build Flask routes
+* Visualizations
+
+
+Other
+My biggest concerns about my work on this project are the cleaning/organizing of the data and learning the modules for visualization. I'm concerned that I will struggle to get the templates to work in the Flask app and that I my tables do not make sense.
+
+I feel confident that I can complete: the class definitions and build functions, make the routes work so long that I have accessed the proper data, and scrape the data.
+
+SPECIFICALLY ABOUT YOUR PROJECT — I am concerned that my tables don't make sense. Can you provide feedback on that specific element?

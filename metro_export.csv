@@ -14,9 +14,9 @@ Rio de Janeiro,Brazil,41,Rio de Janeiro Metro,244.7
 Salvador,Brazil,19,Salvador Metro,42 
 São Paulo,Brazil,85,São Paulo Metro,1295.4 
 Sofia,Bulgaria,34,Sofia Metro,89.7 
-Montreal,Canada,68,Montreal Metro,367.5 
-Toronto,Canada,75,Toronto subway,304.1 
-Vancouver,Canada,53,SkyTrain,151.4 
+Montreal,Canada,68,Montreal Metro,383.1 
+Toronto,Canada,75,Toronto subway,416.2 
+Vancouver,Canada,53,SkyTrain,160 
 Santiago,Chile,119,Santiago Metro,685.1 
 Beijing,China,324,Beijing Subway,3850 
 Changchun,China,59,Changchun Subway,127.3 
@@ -107,12 +107,12 @@ Osaka,Japan[Nb 36],100,Osaka Metro,870.4
 Sapporo,Japan[Nb 36],46,Sapporo Municipal Subway,229.2 
 Sendai,Japan[Nb 36],29,Sendai Subway,88.4 
 Tokyo,Japan[Nb 36],99,Toei Subway,1004.5 
-Tokyo Metro,1927[218],2709.1 ,2008,n/a
-Tokyo Monorail,1964,105.4 ,2004,n/a
-Rinkai Line,1996[205],90.7 ,2002,n/a
-Combined systems,1927,3909.7 ,2008,n/a
+Tokyo,Japan[Nb 36],142,Tokyo Metro,2709.1 
+Tokyo,Japan[Nb 36],8,Tokyo Monorail,105.4 
+Tokyo,Japan[Nb 36],8,Rinkai Line,90.7 
+Tokyo,Japan[Nb 36],257,Combined systems,3909.7 
 Yokohama,Japan[Nb 36],40,Yokohama Municipal Subway,239.1 
-Minatomirai Line,2004[205],76.4 ,2008,n/a
+Yokohama,Japan[Nb 36],6,Minatomirai Line,76.4 
 Almaty,Kazakhstan,9,Almaty Metro,13.8 
 Pyongyang,North Korea,17,Pyongyang Metro,36 
 Busan,South Korea,135,Busan Metro,358 
@@ -121,8 +121,8 @@ Daejeon,South Korea,22,Daejeon Metro,39
 Gwangju,South Korea,20,Gwangju Metro,19 
 Incheon,South Korea,55,Incheon Subway,109 
 Seoul,South Korea,315,Seoul Subway (lines 1-9),2836.5 
-Korail metro lines[Nb 45][Nb 44],1994[Nb 46],415.6 ,2016,n/a
-Shinbundang Line[Nb 44] ,2011,95.7 ,2016,n/a
+Seoul,South Korea,81,Korail metro lines,415.6 
+Seoul,South Korea,12,Shinbundang Line (NeoTrans),95.7 
 Kuala Lumpur,Malaysia,104,Rapid KL,182 
 Mexico City,Mexico,163,Mexico City Metro,1647 
 Monterrey,Mexico,31,Monterrey Metro,177.6 
@@ -132,7 +132,7 @@ Oslo,Norway,101,Oslo Metro,118
 Panama City,Panama,14,Panama Metro,81.5 
 Lima,Peru,26,Lima Metro,107.5 
 Manila,Philippines,31,Manila Light Rail Transit System,243.6 
-Manila Metro Rail Transit System,1999,158.8 ,2000,n/a
+Manila,Philippines,13,Manila Metro Rail Transit System,158.8 
 Warsaw,Poland,27,Warsaw Metro,187.3 
 Lisbon,Portugal,56,Lisbon Metro,161.5 
 Bucharest,Romania,47,Bucharest Metro,179.1 
@@ -154,7 +154,7 @@ Kaohsiung,Taiwan,37,Kaohsiung Rapid Transit,68.1
 Taipei,Taiwan,108,Taipei Metro,765.5 
 Taoyuan,Taiwan,22,Taoyuan Metro,23.2 
 Bangkok,Thailand,43,BTS Skytrain,241.1 
-Metropolitan Rapid Transit,2004,107.8 ,2017,n/a
+Bangkok,Thailand,34,Metropolitan Rapid Transit,107.8 
 Adana,Turkey,13,Adana Metro,14 
 Ankara,Turkey,56,Ankara Metro,131 
 Bursa,Turkey,38,Bursaray,91.3 
@@ -166,22 +166,22 @@ Kiev,Ukraine,52,Kiev Metro,496.1
 Dubai,United Arab Emirates,47,Dubai Metro,200.1 
 Glasgow,United Kingdom,15,Glasgow Subway,11.4 
 London,United Kingdom,270,London Underground,1378 
-Docklands Light Railway,1987[299],122.3 ,2011,n/a
+London,United Kingdom,45,Docklands Light Railway,122.3 
 Newcastle,United Kingdom,60,Tyne and Wear Metro,37.7 
-Atlanta,United States,38,MARTA,67.4 
-Baltimore,United States,14,Baltimore Metro Subway,10.8 
-Boston,United States,51,MBTA Subway,167.2 
-Chicago,United States,145,"Chicago ""L""",230.2 
-Cleveland,United States,18,RTA Rapid Transit: Red Line,5.9 
-Los Angeles,United States,16,Metro Rail,44.9 
-Miami,United States,23,Metrorail,19.7 
+Atlanta,United States,38,MARTA,64.9 
+Baltimore,United States,14,Baltimore Metro Subway,8.3 
+Boston,United States,51,MBTA Subway,155.7 
+Chicago,United States,145,"Chicago ""L""",225.9 
+Cleveland,United States,18,RTA Rapid Transit: Red Line,6.2 
+Los Angeles,United States,16,Metro Rail,43.3 
+Miami,United States,23,Metrorail,19.3 
 New York City,United States,424,New York City Subway,1727.3 
-Staten Island Railway,1925[Nb 77],8.8 ,2017,n/a
-PATH,1908[322],93.0 ,1937,n/a
-Philadelphia,United States,75,SEPTA,91.8 
-PATCO Speedline,1936[328][Nb 80],10.8 ,1969,n/a
-San Francisco,United States,45,BART,129.3 
-"San Juan,Puerto Rico",United States,16,Tren Urbano,4.8 
-"Washington, D.C.",United States,91,Washington Metro,229.6 
+New York City,United States,21,Staten Island Railway,8.8 
+New York City,United States,13,PATH,91.2 
+Philadelphia,United States,75,SEPTA,93.5 
+Philadelphia,United States,13,PATCO Speedline,10.8 
+San Francisco,United States,45,BART,125.6 
+"San Juan,Puerto Rico",United States,16,Tren Urbano,5.2 
+"Washington, D.C.",United States,91,Washington Metro,226.3 
 Tashkent,Uzbekistan,29,Tashkent Metro,61.6 
 Caracas,Venezuela,49,"Caracas Metro, Los Teques Metro",358 

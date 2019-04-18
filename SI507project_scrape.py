@@ -22,25 +22,52 @@ soup = BeautifulSoup(data, "html.parser")
 table  = soup.find_all('table', class_="wikitable")
 systems = table[0]
 systems_list = systems.find_all('tr')[1:]
+#print(systems_list[-5:])
 # print(len(systems_list[0].find_all("td")))
 master = []
 
+
+last_country = ['start']
+last_city = ['start']
+
 for s in systems_list:
+
     system = s.find_all("td")
-    try:
-        ridership = system[7].text.strip()
-    except:
-        ridership = 'n/a'
-    temp = [
-    system[0].text.strip(),
-    system[1].text.strip(),
-    system[2].text.strip(),
-    system[3].text.strip(),
-    system[4].text.strip(),
-    system[5].text.strip(),
-    ridership
-    ]
-    master.append(temp)
+    # print(len(system))
+
+    if len(system) == 6:
+        city = last_city[-1]
+        country = last_country[-1]
+        name = system[0].text.strip()
+        stations = system[3].text.strip()
+
+        try:
+            ridership = system[5].text.strip()
+        except:
+            ridership = 'n/a'
+
+        temp = [city,country, stations, name, ridership]
+        master.append(temp)
+
+
+    else:
+        city = system[0].text.strip()
+        country = system[1].text.strip()
+        name = system[2].text.strip()
+        stations = system[5].text.strip()
+
+        try:
+            ridership = system[7].text.strip()
+        except:
+            ridership = 'n/a'
+
+        temp = [city, country, stations, name, ridership]
+        master.append(temp)
+
+        last_country.append(country)
+        last_city.append(city)
+
+
 
 # print(len(master))
 # print(master)

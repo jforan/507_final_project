@@ -32,34 +32,42 @@ class Cities(Base):
 class Systems(Base):
     __tablename__ = 'systems'
     id = Column(Integer,primary_key = True, autoincrement = True)
-    Name = Column(String(250),ForeignKey('cities.id'))
+    Name = Column(String(250))
     Number_of_stations = Column(Integer)
     Ridership = Column(Integer)
-    cities = relationship("City")
+    City_id = Column(Integer, ForeignKey('cities.id'))
+    cities = relationship("Cities")
 
 
 init_db()
-
-## load in datasets (2)
 
 
 with open("metro_export.csv", 'r') as file:
     csv_data = csv.reader(file)
     next(csv_data,None)
 
-    for i in csv_data:
-        print(i[0])
-        # for e in i[4]:
-        #     updated = e[:-1]
-        #     f_updated = float(updated)
-        list_countries = Cities(City = i[0], Country = i[1])
-        session.add(list_countries)
+    list_of_citiescountries = []
 
+    for i in csv_data:
+
+        random_list = []
+        if [i[0],i[1]] not in list_of_citiescountries:
+            # print(i[0])
+            random_list.append(i[0])
+            # print(random_list)
+
+            list_of_citiescountries.append([i[0],i[1]])
+
+    # for i in list_of_citiescountries:
+    #     print (i)
+    for i in list_of_citiescountries:
+        list = Cities(City = i[0], Country = i[1])
+        session.add(list)
 session.commit()
 
 
 def getid(cityname):
-    queryvar = session.query(City).filter(City.City == cityname).first()
+    queryvar = session.query(Cities).filter(Cities.City == cityname).first()
     result = queryvar.id
     return result
 
@@ -69,11 +77,7 @@ with open("metro_export.csv", 'r') as file:
     next(csv_data,None)
 
     for i in csv_data:
-        print(i[0])
-        # for e in i[4]:
-        #     updated = e[:-1]
-        #     f_updated = float(updated)
-        list_system_db = Systems(Name = i[3], Number_of_stations = i[2], Ridership = i[4])
+        list_system_db = Systems(Name = i[3], Number_of_stations = i[2], Ridership = i[4], City_id = getid(i[0]))
         session.add(list_system_db)
 
 session.commit()

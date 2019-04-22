@@ -1,6 +1,6 @@
 from statistics import mean
 
-def average_station(list_of_lists):
+def average_station(database):
     list_for_average = []
     for i in list_of_lists:
         list_for_average.append(i[2])

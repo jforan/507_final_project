@@ -2,7 +2,10 @@ from flask import Flask, render_template, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import SI507project_db_query
 import SI507project_db
-from prettytable import PrettyTable
+# from prettytable import PrettyTable
+import flask_table
+# import plotly.plotly as py
+# import plotly.graph_objs as go
 
 
 app = Flask(__name__)
@@ -42,11 +45,44 @@ def stations():
         else:
             dict[city_name.Country] += 1
 
-    table = PrettyTable(['Country', 'Number of Stations'])
-    for i in dict:
-        table.add_row([i, dict[i]])
 
-    return table
+    class Item(object):
+        def __init__(self, name, description):
+            self.name = name
+            self.description = description
+
+    return render_template('stations_table.html',result=dict)
+
+
+
+# @app.route('/ridership_by_stations')
+# def ridership_by_stations():
+
+
+## Flask-Forms-DB-example-master
+# @app.route('/new')
+# def new():
+
+# @app.route('/result',methods=["GET"])
+# def result_form1():
+#     if request.method == "GET":
+#         print(request.args) # Check out your Terminal window where you're running this... to see
+#         if len(request.args) > 0:
+#             for k in request.args:
+#                 poss_type = request.args.get(k,"None") # in two steps for clarity
+#                 veh = Vehicle.query.filter_by(type=poss_type).first()
+#                 if not veh:
+#                     veh = Vehicle(type=request.args.get(k,"None"),number_owned=0) # start
+#                     session.add(veh)
+#                     session.commit()
+#                 veh.number_owned += 1
+#                 session.add(veh)
+#                 session.commit()
+#             return "Vehicles (or lack thereof) successfully noted. <br><br> <a href='http://localhost:5000/'>Go to the main page</a>"
+
+
+
+
 
 
 

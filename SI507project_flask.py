@@ -4,9 +4,13 @@ import SI507project_db_query
 import SI507project_db
 # from prettytable import PrettyTable
 import flask_table
-# import plotly.plotly as py
-# import plotly.graph_objs as go
+import plotly
+import plotly.plotly as py
+import plotly.graph_objs as go
 
+
+plotly.tools.set_credentials_file(username='jforan0127', api_key='WGk6w3RfTnsG16G7n8OL')
+plotly.tools.set_config_file(world_readable=True, sharing='public')
 
 app = Flask(__name__)
 app.debug = True
@@ -24,13 +28,11 @@ session = db.session
 city_table = SI507project_db_query.city_query
 system_table = SI507project_db_query.system_query
 
-
 ## Main route
 @app.route('/')
 def homepage():
     # return "Welcome to Jen Foran's SI507 project!"
-    return 'Welcome to Jen Forans SI507 project!. <br><br> <a href="http://localhost:5000/stations_per_country">Click here to see Stations/Country.'
-    # </a> <br><br> <a href="http://localhost:5000/all_vehicles">Click here to see all vehicles</a>.'
+    return 'Welcome to Jen Forans SI507 project!. <br><br> <a href="http://localhost:5000/stations_per_country">Click here to see Stations/Country. </a> <br><br> <a href="http://localhost:5000/ridership_by_stations">Click here to view Ridership vs # of Stations</a>.'
 
 
 @app.route('/stations_per_country')
@@ -55,13 +57,33 @@ def stations():
 
 
 
-# @app.route('/ridership_by_stations')
-# def ridership_by_stations():
+@app.route('/ridership_by_stations')
+def ridership_by_stations():
+    ridership = []
+    stations = []
+    city = []
+    for i in system_table:
+        # temp = []
+        ridership.append(i.Ridership)
+        stations.append(i.Number_of_stations)
+        city_name = SI507project_db.session.query(SI507project_db.Cities).filter_by(id=i.City_id).first()
+        city.append(city_name.City)
+
+    for i in ridership:
+
+        trace = go.Scatter(x = ridership, y = stations, text = city, mode = 'markers', textposition = 'top center')
+
+        data = [trace]
+        return py.plot(data)
 
 
-## Flask-Forms-DB-example-master
-# @app.route('/new')
-# def new():
+
+# Flask-Forms-DB-example-master
+@app.route('/new')
+def new():
+    return render_template('form1.html')
+
+
 
 # @app.route('/result',methods=["GET"])
 # def result_form1():

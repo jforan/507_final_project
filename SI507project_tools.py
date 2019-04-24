@@ -1,3 +1,6 @@
+## i don't use these
+
+
 from statistics import mean
 
 def average_station(database):

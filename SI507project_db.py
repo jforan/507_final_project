@@ -11,8 +11,6 @@ import os
 import sys
 
 
-
-
 Base = declarative_base()
 session = scoped_session(sessionmaker())
 
@@ -45,7 +43,7 @@ class Systems(Base):
 
 init_db()
 
-
+###################### uncomment if you would like to create tables
 # with open("metro_export.csv", 'r') as file:
 #     csv_data = csv.reader(file)
 #     next(csv_data,None)

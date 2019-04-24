@@ -2,7 +2,6 @@ from flask import Flask, render_template, session, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 import SI507project_db_query
 import SI507project_db
-# import flask_table
 import plotly
 import plotly.plotly as py
 import plotly.graph_objs as go
@@ -18,7 +17,7 @@ app.debug = True
 app.use_reloader = True
 app.config['SECRET_KEY'] = 'hard to guess string for app security adgsdfsadfdflsdfsj'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./movies.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./SI507_final_databases.sqlite'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

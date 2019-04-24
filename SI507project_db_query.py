@@ -3,7 +3,6 @@ from db import session, init_db
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import SI507project_db
-import SI507project_tools
 
 
 engine = create_engine('sqlite:///SI507_final_databases.sqlite')

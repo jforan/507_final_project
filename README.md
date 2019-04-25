@@ -19,12 +19,14 @@ From there, a flask app is created with the following functionality:
 * allow users to add a new station with the appropriate other info: country, city, station name, number of stations, and annual ridership.
 
 
+
 ## How to run
 
 1. First, you should install all requirements with `pip install -r requirements.txt`
-2. Second, you should run SI507project_tests.py to ensure that there is nothing wrong `python SI507project_tests.py`
-3. Finally, run `python SI507project_flask.py runserver`.
-4. If you click to the form entry (via 'Click to Search a System'), you can input 'Algiers Metro' (no quotes) to get information. To see what happens when the system does not exist, input 'Test System' (no quotes).
+2. Second, run `python SI507project_flask.py runserver`.
+3. If you click to the form entry (via 'Click to Search a System'), you can input 'Algiers Metro' (no quotes) to get information. To see what happens when the system does not exist, input 'Test System' (no quotes).
+4. Finally, you should run `python SI507project_tests.py` to ensure that there is nothing wrong
+
 
 
 ## How to use
@@ -49,7 +51,9 @@ PLEASE NOTE: this requires internet to be fully functional.
 
 
 ## How to run tests
-* i need to work on these once i complete my tests
+
+1. run `python SI507project_flask.py runserver` to ensure everything has been created.
+2. run `python SI507project_tests.py`
 
 
 ## In this repository:
@@ -89,7 +93,7 @@ Below is a list of the requirements listed in the rubric for you to copy and pas
 ### General
 - [x] Project is submitted as a Github repository
 - [x] Project includes a working Flask application that runs locally on a computer
-- [ ] Project includes at least 1 test suite file with reasonable tests in it.
+- [x] Project includes at least 1 test suite file with reasonable tests in it.
 - [x] Includes a `requirements.txt` file containing all required modules to run program
 - [x] Includes a clear and readable README.md that follows this template
 - [x] Includes a sample .sqlite/.db file

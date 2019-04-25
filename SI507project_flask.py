@@ -32,12 +32,11 @@ system_table = SI507project_db_query.system_query
 
 @app.route('/')
 def homepage():
-    # return "Welcome to Jen Foran's SI507 project!"
-    return 'Welcome to Jen Forans SI507 project!. <br><br><br><br><br><br> <a href="http://localhost:5000/stations_per_country">Click here to see Stations/Country. </a> <br><br> <a href="http://localhost:5000/ridership_by_stations">Click here to view Ridership vs # of Stations</a>. <br><br> <a href="http://localhost:5000/new">Click Search a Station.</a>'
+    return 'Welcome to Jen Forans SI507 project! <br><br><br><br><br><br> <a href="http://localhost:5000/systems_per_country">Click here to see Systems/Country. </a> <br><br> <a href="http://localhost:5000/ridership_by_stations">Click here to view Ridership vs # of Stations</a>. <br><br> <a href="http://localhost:5000/info">Click to Search a System.</a>'
 
 
 
-@app.route('/stations_per_country')
+@app.route('/systems_per_country')
 def stations():
     dict = {}
     for i in system_table:
@@ -55,7 +54,7 @@ def stations():
             self.name = name
             self.description = description
 
-    return render_template('stations_table.html',result=dict) + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/ridership_by_stations">Click here to view Ridership vs # of Stations</a>. <br><br> <a href="http://localhost:5000/new">Click Search a Station.</a>'
+    return render_template('stations_table.html',result=dict) + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/ridership_by_stations">Click here to view Ridership vs # of Stations</a>. <br><br> <a href="http://localhost:5000/info">Click to Search a System.</a>'
 
 
 
@@ -75,14 +74,14 @@ def ridership_by_stations():
         data = [trace]
 
         ## this would be used if to actually build the plotly graph.
-        # return py.plot(data) + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/stations_per_country">Click here to see Stations/Country. </a> <br><br> <a href="http://localhost:5000/new">Click Search a Station.</a>'
+        # return py.plot(data) + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/systems_per_country">Click here to see Systems/Country. </a> <br><br> <a href="http://localhost:5000/info">Click to Search a System.</a>'
 
         ## this is the embedded graph.
-        return tls.get_embed('https://plot.ly/~jforan0127/20') + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/stations_per_country">Click here to see Stations/Country. </a> <br><br> <a href="http://localhost:5000/new">Click Search a Station.</a>'
+        return tls.get_embed('https://plot.ly/~jforan0127/20') + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/systems_per_country">Click here to see Systems/Country. </a> <br><br> <a href="http://localhost:5000/info">Click to Search a System.</a>'
 
 
-@app.route('/new')
-def new():
+@app.route('/info')
+def info():
     return render_template('form1.html')
 
 @app.route('/result',methods=["GET"])
@@ -95,11 +94,11 @@ def result_form1():
             name = metro.Name
             ridership = metro.Ridership
             stations = metro.Number_of_stations
-            return "Station Name: {} <br><br> Annual Ridership: {} <br><br> Number of Stations: {}.".format(name, ridership,stations) + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/stations_per_country"> Click here to view Ridership vs # of Stations </a>. <br><br> <a href="http://localhost:5000/stations_per_country">Click here to see Stations/Country. </a> <br><br> <a href="http://localhost:5000/new">Click Search a Station.</a>'
+            return "System Name: {} <br><br> Annual Ridership: {} million <br><br> Number of Stations: {}.".format(name, ridership,stations) + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/systems_per_country"> Click here to view Ridership vs # of Stations </a>. <br><br> <a href="http://localhost:5000/systems_per_country">Click here to see Systems/Country. </a> <br><br> <a href="http://localhost:5000/info">Click to Search a System.</a>'
 
 
         else:
-            return "This system does not exist :(" + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/stations_per_country"> Click here to view Ridership vs # of Stations </a>. <br><br> <a href="http://localhost:5000/stations_per_country">Click here to see Stations/Country. </a> <br><br> <a href="http://localhost:5000/new">Click Search a Station.</a>'
+            return "This system does not exist :(" + '<br><br><br><br><br><br> <a href="http://localhost:5000/">Click to Return Home. </a> <br><br> <a href="http://localhost:5000/systems_per_country"> Click here to view Ridership vs # of Stations </a>. <br><br> <a href="http://localhost:5000/systems_per_country">Click here to see Systems/Country. </a> <br><br> <a href="http://localhost:5000/info">Click to Search a System.</a>'
 
 
 if __name__ == '__main__':

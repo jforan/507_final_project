@@ -44,42 +44,42 @@ class Systems(Base):
 init_db()
 
 ###################### uncomment if you would like to create tables
-# with open("metro_export.csv", 'r') as file:
-#     csv_data = csv.reader(file)
-#     next(csv_data,None)
-#
-#     list_of_citiescountries = []
-#
-#     for i in csv_data:
-#
-#         random_list = []
-#         if [i[0],i[1]] not in list_of_citiescountries:
-#             # print(i[0])
-#             random_list.append(i[0])
-#             # print(random_list)
-#
-#             list_of_citiescountries.append([i[0],i[1]])
-#
-#     # for i in list_of_citiescountries:
-#     #     print (i)
-#     for i in list_of_citiescountries:
-#         list = Cities(City = i[0], Country = i[1])
-#         session.add(list)
-# session.commit()
-#
-#
-# def getid(cityname):
-#     queryvar = session.query(Cities).filter(Cities.City == cityname).first()
-#     result = queryvar.id
-#     return result
-#
-#
-# with open("metro_export.csv", 'r') as file:
-#     csv_data = csv.reader(file)
-#     next(csv_data,None)
-#
-#     for i in csv_data:
-#         list_system_db = Systems(Name = i[3], Number_of_stations = i[2], Ridership = i[4], City_id = getid(i[0]))
-#         session.add(list_system_db)
-#
-# session.commit()
+with open("metro_export.csv", 'r') as file:
+    csv_data = csv.reader(file)
+    next(csv_data,None)
+
+    list_of_citiescountries = []
+
+    for i in csv_data:
+
+        random_list = []
+        if [i[0],i[1]] not in list_of_citiescountries:
+            # print(i[0])
+            random_list.append(i[0])
+            # print(random_list)
+
+            list_of_citiescountries.append([i[0],i[1]])
+
+    # for i in list_of_citiescountries:
+    #     print (i)
+    for i in list_of_citiescountries:
+        list = Cities(City = i[0], Country = i[1])
+        session.add(list)
+session.commit()
+
+
+def getid(cityname):
+    queryvar = session.query(Cities).filter(Cities.City == cityname).first()
+    result = queryvar.id
+    return result
+
+
+with open("metro_export.csv", 'r') as file:
+    csv_data = csv.reader(file)
+    next(csv_data,None)
+
+    for i in csv_data:
+        list_system_db = Systems(Name = i[3], Number_of_stations = i[2], Ridership = i[4], City_id = getid(i[0]))
+        session.add(list_system_db)
+
+session.commit()

@@ -48,7 +48,6 @@ def stations():
         else:
             dict[city_name.Country] += 1
 
-
     class Item(object):
         def __init__(self, name, description):
             self.name = name
